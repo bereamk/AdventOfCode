@@ -1,17 +1,7 @@
-/*
-This program will take input of two lists of numbers (5 digits) separated by three spaces.
-Example input: 1 2 3 4 5   6 7 8 9 10.
-Program should find the smallest number in the first list and the smallest number in the second list
-and then subtract them (and do this with the entire input recursively). The result of each will be stored in a new list.
-The program will then add the numbers in the new list and output the result.
- */
-
-
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Scanner;
 
-public class Puzzle {
+public class Day1_Part1 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
