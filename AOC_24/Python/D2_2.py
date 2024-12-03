@@ -1,15 +1,4 @@
-def main():
-    print("Enter the reports. Type 'q' to calculate and quit.")
-
-    input_lines = collect_reports()  # List is stored in input_lines
-    unsafe_reports, safe_reports = process_reports(input_lines)  # Process the reports
-
-    print("\n--------------------------")
-    print("Total reports:", len(input_lines))
-    print("Unsafe reports:", len(unsafe_reports))
-    print("Safe reports:", len(safe_reports))
-
-
+# ------------------ Input ------------------
 def collect_reports():  # Collects reports from user input, accepting multiple lines.
     print("Enter all reports (one per line), then press Enter twice to finish:")
     lines = []
@@ -21,6 +10,7 @@ def collect_reports():  # Collects reports from user input, accepting multiple l
     return lines
 
 
+# ---------------- Calculation ----------------
 def calculate(report):  # Calculates the ranges between levels in a report.
     try:
         levels = [int(x) for x in report.split()]  # Convert levels to integers
@@ -36,6 +26,7 @@ def calculate(report):  # Calculates the ranges between levels in a report.
         return []
 
 
+# ------------------ Methods ------------------
 def is_unsafe(ranges):  # Determines if a report is unsafe based on given criteria.
     if not ranges:
         return "\n    - Invalid input."
@@ -97,5 +88,17 @@ def attempt_to_fix_report(levels):  # Attempts to fix an unsafe report by removi
     return None  # Return None if no fix makes the report safe
 
 
+# =================== MAIN ====================
+def main():
+    input_lines = collect_reports()  # List is stored in input_lines
+    unsafe_reports, safe_reports = process_reports(input_lines)  # Process the reports
+
+    print("--------------------------")
+    print("Total reports:", len(input_lines))
+    print("Unsafe reports:", len(unsafe_reports))
+    print("Safe reports:", len(safe_reports))
+
+
+# ------------------ EXECUTE ------------------
 if __name__ == '__main__':
     main()
