@@ -1,6 +1,7 @@
 import re
 
 
+# ------------------ Input ------------------
 def collect_input():
     print("Enter input, then press Enter twice to finish:")
     lines = []
@@ -12,6 +13,7 @@ def collect_input():
     return " ".join(lines)
 
 
+# ------------------ Methods ------------------
 def extract_segments(input_string):
     # Split the string at every "don't()"
     dont_parts = input_string.split("don't()")
